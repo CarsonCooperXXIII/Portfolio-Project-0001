@@ -1,0 +1,50 @@
+    <!-- Create a simple Program to build the Calculator in JavaScript using with HTML and CSS web languages. -->  
+    <!DOCTYPE html>  
+    <html lang = "en">  
+    <head>  
+    <title> JavaScript Calculator </title>   
+    <link rel="stylesheet" href="styles.css">
+    </head>  
+    <body>  
+    <h1> Calculator Program in JavaScript </h1>  
+    <div class= "formstyle">  
+    <form name = "form1">  
+          
+        <!-- This input box shows the button pressed by the user in calculator. -->  
+      <input id = "calc" type ="text" name = "answer"> <br> <br>  
+      <!-- Display the calculator button on the screen. -->  
+      <!-- onclick() function display the number prsses by the user. -->  
+      <input type = "button" value = "1" id="btn1">  
+      <input type = "button" value = "2" id="btn2">  
+      <input type = "button" value = "3" id="btn3">  
+      <input type = "button" value = "+" id="btnPlus">  
+      <br> <br>  
+        
+      <input type = "button" value = "4" id="btn4">  
+      <input type = "button" value = "5" id="btn5">  
+      <input type = "button" value = "6" id="btn6">  
+      <input type = "button" value = "-" id="btnMinus">  
+      <br> <br>  
+        
+      <input type = "button" value = "7" id="btn7">  
+      <input type = "button" value = "8" id="btn8">  
+      <input type = "button" value = "9" id="btn9">  
+      <input type = "button" value = "*" id="btnMultiply">  
+      <br> <br>  
+        
+        
+      <input type = "button" value = "/" id="btnDivide">  
+      <input type = "button" value = "0" id="btn0">  
+        <input type = "button" value = "." id="btnDot">  
+        <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->  
+      <input type = "button" value = "=" id="btnEqual"  eval(form1.answer.value) >  
+      <br>   
+      <!-- Display the Cancel button and erase all data entered by the user. -->  
+      <input type = "clearAll" value = "Clear All" id= "btnClear" >  
+      <br>   
+        
+    </form>  
+    </div> 
+    <script src="calculator.js"></script> 
+    </body>  
+    </html>  
