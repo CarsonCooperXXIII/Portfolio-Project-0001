@@ -1,3 +1,26 @@
+// Add keyboard event handlers to process any keys the user might press in the calculator display. Did the user enter a number, a letter, or an operator? If the user presses Enter, run the calculation.
+
+document.addEventListener('keydown', function(event) {
+    var key = event.key;
+    var display = form1.answer;
+
+    if (isNumeric(key)) {
+        display.value += key;
+    } else if (isOperator(key)) {
+        display.value += key;
+    } else if (key === 'Enter') {
+        display.value = eval(display.value);
+    }
+});
+
+function isNumeric(key){
+    return !isNaN(parseFloat(key)) && isFinite(key);
+}
+
+function isOperator(key){
+    return key === '+' || key === '-' || key === '*' || key === '/' || key === '%';
+}
+
 // Select the button element using its id 
 var btn1 = document.getElementById('btn1');
 var btn2 = document.getElementById('btn2');
@@ -84,9 +107,18 @@ btnDot.addEventListener('click', function(){
     form1.answer.value += '.';
 })
 
+// btnEqual.addEventListener('click', function(){
+//     form1.answer.value = eval(form1.answer.value);
+// })
+
 btnEqual.addEventListener('click', function(){
-    form1.answer.value = eval(form1.answer.value);
-})
+    try {
+        var result = math.evaluate(form1.answer.value);
+        form1.answer.value = result;
+    } catch (error){
+        console.log('Error', error);
+    }
+});
 
 btnClear.addEventListener('click', function(){
     form1.answer.value = '';
